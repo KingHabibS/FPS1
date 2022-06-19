@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18207,6 +18207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1916561256}
   - component: {fileID: 1916561257}
+  - component: {fileID: 1916561258}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -18245,6 +18246,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 0
+--- !u!95 &1916561258
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916561255}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4cbb00451eea5dc45874b0a6579138c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2053865957
 GameObject:
   m_ObjectHideFlags: 0
@@ -18640,7 +18661,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4826448726747916}
   - component: {fileID: 4826448726747917}
-  - component: {fileID: 4826448726747918}
   m_Layer: 0
   m_Name: Rifle_06
   m_TagString: Untagged
@@ -18815,29 +18835,11 @@ MonoBehaviour:
   damage: 5
   range: 100
   fireRate: 15
+  maxAmmo: 10
+  reloadTime: 1
   fpsCam: {fileID: 39043177}
   flash: {fileID: 337272206}
   impactEffect: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
---- !u!95 &4826448726747918
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671028630661806}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf9fda370af5e374caa5e0ab7ce3f915, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &4855906031545592
 Transform:
   m_ObjectHideFlags: 0
@@ -19893,6 +19895,8 @@ MonoBehaviour:
   damage: 10
   range: 100
   fireRate: 8
+  maxAmmo: 10
+  reloadTime: 1
   fpsCam: {fileID: 39043177}
   flash: {fileID: 1081095415}
   impactEffect: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
@@ -20182,6 +20186,8 @@ MonoBehaviour:
   damage: 4
   range: 50
   fireRate: 5
+  maxAmmo: 10
+  reloadTime: 1
   fpsCam: {fileID: 39043177}
   flash: {fileID: 103652999}
   impactEffect: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
