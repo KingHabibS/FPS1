@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using TMPro;
 
 public class Gun : MonoBehaviour
 {
@@ -17,6 +19,9 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem flash;
     public GameObject impactEffect;
+
+    public TextMeshProUGUI ammoDisplay;
+    public string slash = "/";
 
     private float nextTimeToFire = 0f;
 
@@ -37,6 +42,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ammoDisplay.text = currentAmmo.ToString() + slash + maxAmmo;
         if (isReloading)
             return;
         
@@ -46,11 +52,14 @@ public class Gun : MonoBehaviour
             return;
         }
 
+        
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
+
         }
+
 
     }
 
@@ -80,7 +89,6 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
 
             Enemy target = hit.transform.GetComponent<Enemy>();
             if (target !=null)
