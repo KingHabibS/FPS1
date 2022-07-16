@@ -6,6 +6,7 @@ using TMPro;
 public class Gun : MonoBehaviour
 {
 
+    
 
     public float damage = 10f;
     public float range = 100f;
@@ -94,6 +95,12 @@ public class Gun : MonoBehaviour
             if (target !=null)
             {
                 target.TakeDamage(damage);
+            }
+
+            var hitBox = hit.collider.GetComponent<HitBox>();
+            if (hitBox)
+            {
+                hitBox.OnRaycastHit(this, fpsCam.transform.forward);
             }
 
             GameObject imapctGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
